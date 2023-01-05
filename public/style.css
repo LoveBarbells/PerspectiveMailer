@@ -1,0 +1,486 @@
+:root {
+
+  /* Breakpoints */
+
+--breakpoint-main:45em;
+  /* Z index */
+
+  --layer-front:1;
+  --layer-main:0;
+  --layer-back:-1;
+  
+  /* colors */
+  /* CSS RGB */
+--bg-color-main:rgb(205,207,193);
+--menu-color-main:rgb(240,235,229);
+--banner-color:rgb(251, 246, 239);
+--ornament-color-main:rgb(30,30,30);
+--footer-color-main:rgb(99, 87, 63);
+--text-color-main:rgb(93,89,80);
+--text-color-forms:#cfd6b8ff;
+--button-color: #d17b7cff;
+
+/* CSS HSL */
+--ash-gray-color: hsla(73, 13%, 78%, 1);
+--isabelline-color: hsla(33, 27%, 92%, 1);
+--davys-grey-color: hsla(42, 8%, 34%, 1);
+--old-lavender-color: hsla(328, 10%, 48%, 1);
+--old-rose-color: hsla(359, 38%, 65%, 1);
+/*CSS HEX SATURATED COLORS */
+/* CSS HEX */
+--pale-spring-bud: #cfd6b8ff;
+--linen: #f2ebe3ff;
+--raw-umber: #6a5f43ff;
+--antique-fuchsia: #985d7cff;
+--new-york-pink: #d17b7cff;
+
+
+/* fonts */
+--font-family-primary: Arial, Helvetica, sans-serif;
+--font-family-heading: var(--font-family-primary);
+--font-family-body: var(--font-family-primary);
+
+
+--font-weight-thin:300;
+--font-weight-regular: 400;
+--font-weight-bold:700;
+
+
+--font-size-body:16px;
+--font-size-heading:20px;
+--font-size-title:40px;
+/* padding and size */
+--max-width:1600px;
+--padding-sides:1rem;
+
+}
+/*font size for desktop */
+/*roughly equal to 800px */
+
+
+
+@media (min-width:50em) {  
+  :root {
+  --font-size-body:26px;
+  --font-size-heading:36px;
+  --font-size-title:80px;
+  }
+}
+
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+
+}
+
+/* Remove default margin */
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+html, body {
+  height: 100%;
+}
+
+/* Set core body defaults */
+body {
+  
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+   scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* utility classes */
+/* color utility classes */
+.bg-color-main {
+  color: var(--bg-color-main);
+}
+
+.menu-color-main {
+color: var(--menu-color-main);
+
+}
+
+.text-color-main {
+color: var(--text-color-main);
+
+}
+
+/* font utility classes */
+.font-weight-thin {
+ font-weight: var(--font-weight-thin);
+}
+
+.font-weight-regular {
+  font-weight: var(--font-weight-regular);
+}
+
+.font-weight-bold {
+  font-weight: var(--font-weight-bold);
+}
+
+.font-size-body {
+font-size: var(--font-size-body);
+
+}
+
+.font-size-heading {
+  font-size: var(--font-size-heading);
+}
+
+.font-size-title {
+
+font-size: var(--font-size-title);
+
+}
+/* body utility class */
+body {
+
+
+  /* body font */
+font-weight: var(--font-weight-regular);
+font-size: var(--font-size-body);
+font-family: var(--font-family-body);
+
+/* body colors */
+color: var(--text-color-main);
+background-color: var(--bg-color-main);
+
+
+
+}
+
+/* general styling */
+/* General layout */
+
+/*navbar that appears when we scroll down */
+#navbar-scroll {
+width: 100%;
+background-color: var(--antique-fuchsia);
+height: 60;
+position: fixed;
+display: block;
+z-index: 2;
+top: -60px;
+transition:top 0.3s;
+}
+
+#navbar-scroll a{
+
+display: block;
+color:var(--isabelline-color) ;
+background-color: var(--antique-fuchsia);
+float: left;
+text-align: center;
+padding-left: 0.5em;
+padding-right: 0.5em;
+}
+#navbar-scroll a:hover{
+
+color: var(--antique-fuchsia);
+background-color: var(--isabelline-color);
+
+}
+
+/* images too big */
+@media (min-width:45em){
+
+  .content{
+  max-height:80vh;
+  min-width: 100%;
+  
+  }
+  
+  }
+  h1,p {
+
+    padding: 0.5em;
+  }
+
+.header-primary {
+
+  min-height: 100vh;
+  display: block;
+ 
+}
+
+section {
+
+min-height: 70vh;
+margin-top: 5vh;
+
+}
+
+
+.container {
+
+  width: clamp(300px , 100% , var(--max-width));
+display: grid;
+column-gap:0;
+margin: auto;
+min-height: 80vh;
+padding-bottom: 1em;
+}
+
+
+
+@media (min-width: 45em ){.container {
+
+grid-auto-flow: column;
+
+grid-auto-columns: 1fr;
+
+}
+.container *{
+
+max-height: max(80vh,100%);
+
+}
+
+}
+.nav-container {
+  min-height: 90%;
+  width: clamp(200px,95%,35em);
+  display: grid;
+  grid-column: 1fr;
+  grid-template-rows: 6fr/1fr;
+  row-gap: 3vh;
+  margin: auto;
+  text-align: center;
+  background-color: var(--menu-color-main);
+  padding: 1em;
+}
+
+.nav-primary-list {
+
+  display: grid;
+  grid-template-columns:1fr ;
+  grid-template-rows: repeat(6,1fr);
+  gap: 3vh;
+  min-width: 80%;
+
+}
+.nav-primary-list > li {
+
+display: block;
+border: 1px solid var(--davys-grey-color);
+min-width: 70%;
+}
+
+
+.nav-primary-list > li:hover {
+
+  background-color: var(--old-rose-color);
+  color: var(--isabelline-color);
+  
+  }
+
+.navbar-link {
+
+  text-decoration: none;
+  color: var(--text-color-main);
+  font-size: var(--font-size-header);
+  font-weight: var(--font-weight-regular);
+}
+
+.navbar-link:hover{
+  color: var(--isabelline-color);
+}
+
+.nav-social-list {
+max-width: 80%;
+display: grid;
+grid-template-columns: repeat(3,1fr);
+grid-row: inherit;
+gap: 1em;
+margin: auto;
+}
+
+
+.image-container {
+min-height: 90%;
+display: grid;
+grid-template-columns: repeat(5,1fr);
+}
+
+.header-title {
+
+text-align: center;
+grid-column: 1/6;
+align-self: center;
+z-index: var(--layer-main);
+
+}
+
+.image-static-primary {
+grid-column: 1/6;
+z-index: var(--layer-back);
+}
+
+.header-title , .image-static-primary {
+
+  grid-row: 1/2;
+}
+.image-sliding-background {
+
+  display: none;
+}
+
+.banner-container {
+
+min-height: 5vh;
+width: 100%;
+margin: auto;
+background-color: var(--banner-color);
+text-align: center;
+
+}
+
+.section-text {
+  min-width: 80%;
+  background-color: var(--menu-color-main);
+  text-align: center;
+  min-height: 40vh;
+  
+}
+
+
+.section-form {
+
+background-color: var(--old-rose-color);
+color: var(--isabelline-color);
+text-align: start;
+padding: 5%;
+width: clamp(200px,100%,50em);
+}
+
+.form-fields {
+
+display: grid;
+gap: 2vh;
+
+}
+textarea {
+
+  resize: none;
+}
+
+
+
+.button {
+
+display: block;
+padding: 0.5em;
+background-color: var(--button-color) ;
+min-width: 1em;
+color: var(--isabelline-color);
+font-weight: var(--font-weight-bold);
+font-size: var(--font-size-heading);
+border: 0;
+}
+
+.button:hover {
+background-color: var(--isabelline-color);
+color: var(--button-color);
+
+}
+
+.footer-primary {
+
+min-height: 20vh;
+margin-top: 3vh;
+background-color: var(--antique-fuchsia);
+margin: auto;
+}
+
+.footer-nav-social {
+  max-width: 80vw;
+  padding: 1vh;
+  display: flex;
+ flex-direction: row;
+ justify-content: center;
+  margin: auto;
+  text-align: center;
+}
+
+@media (min-width: 45em ){.footer-nav-social {
+
+  grid-auto-flow: column;
+  gap: 0.1em;
+  grid-auto-columns: 1fr;
+  padding: 7vh;
+  
+  }
+  .footer-primary {
+
+    min-height: 20vh;
+    margin-top: 3vh;
+    background-color: var(--old-lavender-color);
+    margin: auto;
+    }
+
+}
+
+.footer-nav-social img {
+
+padding-left: 5vw;
+padding-right: 5vw;
+height: 20vh;
+
+}
+.footer-nav-social a {
+margin: auto;
+
+}
